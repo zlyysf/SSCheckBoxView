@@ -69,7 +69,7 @@ static const CGFloat kHeight = 36.0f;
     l.shadowColor = [UIColor whiteColor];
     l.shadowOffset = CGSizeMake(0, 1);
     [self addSubview:l];
-    textLabel = l;
+    _textLabel = l;
 
     UIImage *img = [self checkBoxImageForStyle:style checked:checked];
     CGRect imageViewFrame = [self imageViewFrameForCheckBoxImage:img];
@@ -91,7 +91,7 @@ static const CGFloat kHeight = 36.0f;
 
 - (void) setEnabled:(BOOL)isEnabled
 {
-    textLabel.enabled = isEnabled;
+    _textLabel.enabled = isEnabled;
     enabled = isEnabled;
     checkBoxImageView.alpha = isEnabled ? 1.0f: 0.6f;
 }
@@ -103,7 +103,7 @@ static const CGFloat kHeight = 36.0f;
 
 - (void) setText:(NSString *)text
 {
-    [textLabel setText:text];
+    [_textLabel setText:text];
 }
 
 - (void) setChecked:(BOOL)isChecked

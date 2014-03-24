@@ -42,7 +42,6 @@ typedef enum SSCheckBoxViewStyle_ {
     BOOL enabled;
 
     UIImageView *checkBoxImageView;
-    UILabel *textLabel;
 
     /* called when check box changes state */
     // this method would be in the following form:
@@ -52,6 +51,8 @@ typedef enum SSCheckBoxViewStyle_ {
 
     void (^stateChangedBlock)(SSCheckBoxView *cbv);
 }
+
+@property (nonatomic, readonly) UILabel *textLabel;
 
 @property (nonatomic, readonly) SSCheckBoxViewStyle style;
 @property (nonatomic, readonly) BOOL checked;
